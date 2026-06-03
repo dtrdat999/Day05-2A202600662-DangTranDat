@@ -79,8 +79,8 @@ moni-prototype/
 | Thành viên | Vai trò |
 |---|---|
 | Thân Văn Hoàng | Research / Evidence |
-| Đặng Trần Đạt | SPEC & Prototype |
 | Phạm Quang Dũng | Test / Failure Path |
+| Đặng Trần Đạt | SPEC & Prototype |
 | Hoàng Anh Thư | Demo script / Repo |
 
 ## Disclaimer
