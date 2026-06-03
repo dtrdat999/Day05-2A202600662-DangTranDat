@@ -1,7 +1,7 @@
 # Evidence Pack — Moni Tài Chính (Ví MoMo AI Spending Insight)
 
 ## 1. Nhóm và Track
-* **Tên nhóm:** Nhóm Moniii
+* **Tên nhóm:** Nhóm 4
 * **Track:** D — Personal Finance (Tài chính cá nhân)
 * **Product/app đã chọn:** Ví MoMo
 * **Build slice đang nghĩ:** AI Action Layer trên Lịch sử giao dịch MoMo giúp phân tích chi tiêu tháng, phân loại giao dịch mập mờ/chưa rõ mục đích, cảnh báo rủi ro và gợi ý nhắc lịch thanh toán hóa đơn.
@@ -21,7 +21,7 @@ Nhóm tự mở app MoMo thực tế, sử dụng tài khoản cá nhân và ghi
 ---
 
 ## 3. Khảo Sát & Bằng Chứng Xã Hội (User / Review / Social Evidence)
-Nhóm đã tiến hành phỏng vấn chéo nhanh 5 người dùng MoMo thuộc phân khúc sinh viên và người mới đi làm:
+Nhóm đã tiến hành phỏng vấn chéo nhanh 4 người dùng MoMo thuộc phân khúc sinh viên và người mới đi làm:
 
 | Quote / review / observation | Nguồn | User là ai? | Pain/failure mode |
 |---|---|---|---|
@@ -81,7 +81,7 @@ cho mọi giao dịch một cách im lặng (automation).
 
 Sau evidence:
 Nhóm đổi thành mô hình AI Action Layer trên màn hình lịch sử giao dịch. Bổ sung các Suggested Chips
-để tránh chatbot báo "Không tìm thấy" và chuyển từ Automation sang Augmentation (AI chỉ gắn nhãn nháp
+để dẫn dắt user qua các kịch bản chính và chuyển từ Automation sang Augmentation (AI chỉ gắn nhãn nháp
 cảnh báo và hiển thị nút hành động để user xác nhận hoặc sửa lại).
 
 Lý do:
