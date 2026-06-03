@@ -9,12 +9,12 @@ Chúng tôi không gom bằng chứng theo tính năng, mà gom theo trải nghi
 
 * **Cụm 1: Bị ngợp thông tin quảng cáo (Cognitive Overload):**
   * Trang chủ MoMo có quá nhiều banner quảng cáo (Ví trả sau, vay nhanh, lắc xì, hoàn tiền) che mất số liệu chi tiêu.
-  * User muốn quản lý tài chính phải mò qua nhiều bước phức tạp.
+  * User muốn quản lý tài chính phải thao tác qua nhiều bước phức tạp.
 * **Cụm 2: Số liệu khô khan không có giải thích (Data without Insights):**
   * MoMo có mục "Tổng quan tháng" hiển thị tổng chi và so sánh cùng kỳ, nhưng chỉ là con số tĩnh (ví dụ: "Tổng chi 271.667đ, tăng ↑271.667đ so với cùng kỳ").
   * User thấy chi tiêu tăng nhưng không hiểu cụ thể vì sao tăng (là do ăn uống tăng hay do một giao dịch lớn đột xuất như thanh toán Google).
 * **Cụm 3: Các giao dịch mập mờ, thiếu phân loại (The "Unclassified" Black Box):**
-  * Các khoản chuyển khoản cá nhân (chia tiền ăn, trả nợ) bị gán "Chưa phân loại" — việc không tự gán bừa là hợp lý, nhưng MoMo dừng ở đó và không chủ động gợi ý giúp user phân loại tiếp (Ăn uống? Trả nợ? Cá nhân?), nên khoản đó cứ bị bỏ trống mãi.
+  * Các khoản chuyển khoản cá nhân (chia tiền ăn, trả nợ) bị gán "Chưa phân loại" — việc không tự gán tùy ý là hợp lý, nhưng MoMo dừng ở đó và không chủ động gợi ý giúp user phân loại tiếp (Ăn uống? Trả nợ? Cá nhân?), nên khoản đó cứ bị bỏ trống mãi.
   * Giao dịch dịch vụ trực tuyến chỉ ghi tên chung chung ("Thanh toán Google") và bị gán nhầm vào "Giải trí" dù thực tế có thể là công cụ làm việc/học tập, làm sai lệch báo cáo tài chính.
 
 ---
