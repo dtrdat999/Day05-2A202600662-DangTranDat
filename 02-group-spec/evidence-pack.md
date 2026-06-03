@@ -9,14 +9,14 @@
 ---
 
 ## 2. Nhật Ký Tự Trải Nghiệm (Self-Use Evidence)
-Nhóm tự mở app MoMo thực tế, thực hiện các giao dịch hằng ngày và ghi nhận lại các điểm gãy (pain points):
+Nhóm tự mở app MoMo thực tế, sử dụng tài khoản cá nhân và ghi nhận lại các điểm gãy (pain points) trên giao diện hiện tại:
 
-| Observation | Screenshot/link | Path liên quan | Điều học được |
+| Observation | Screenshot | Path liên quan | Điều học được |
 |---|---|---|---|
-| Giao dịch chuyển tiền cho cá nhân bị bỏ trống danh mục và ghi nhận nhãn "Chưa phân loại". | [Screenshot](./2aoboqavvntn0jxydbta2iyldgevif4oknbdqk5i12.jpg) | Low-confidence Path | User lười tự tay tìm danh mục để gán. AI cần chủ động hỏi lại kèm các phương án trả lời nhanh thay vì bắt user chọn thủ công. |
-| Giao dịch thanh toán Google Services bị AI tự động phân loại vào "Giải trí" dù thực tế là mua Workspace để làm việc. | [Screenshot](./2aoboqavvntpr8uliollt3tlel9flczf47cwekau8.jpg) | Failure / Correction Path | AI tự quyết dễ dẫn đến sai lệch dữ liệu. Cần hiển thị nhãn tin cậy (Medium Confidence) và cung cấp nút sửa nhanh (Correction Flow). |
-| Trang chủ chứa quá nhiều banner dịch vụ phụ và quảng cáo, đẩy phần lịch sử chi tiêu xuống rất sâu. | [Screenshot](./2aoboqavvnkxbkbvmvlcj7azddrnpjjddhzpjzcs5.jpg) | Happy Path | Thông tin chi tiêu quan trọng bị phân tán. Cần thiết kế một Finance Card tinh gọn tập trung số liệu và có lối tắt truy cập AI. |
-| Chatbot Moni gốc trên MoMo báo "Không tìm thấy" khi người dùng hỏi các câu hỏi tự nhiên về chi tiêu lẩu/ăn uống. | [Screenshot](./2aoboqavvnl02z7thidozsvtgdhe84wdggsnukcs1.jpg) | Happy Path | Ô nhập liệu tự do (free-text) dễ làm AI bối rối. Cần bổ sung các gợi ý dạng chip bấm nhanh (Suggested Prompt Chips) để định hướng. |
+| Màn hình Lịch sử GD hiển thị giao dịch "Thanh toán Google" -271.667đ bị MoMo tự gán nhãn "Giải trí", dù thực tế là mua Google Workspace để học tập/làm việc. Giao dịch "Chuyển tiền đến Nguyễn Đông Anh" -40.000đ thì bị gán "Chưa phân loại". | [Lịch sử GD - ảnh 1](./d248a1cd-d8d7-455e-be03-436dc0b931c0.jpg), [Lịch sử GD - ảnh 2](./bacb2e27-4b6f-4698-8274-7c5f308dca6e.jpg) | Failure Path + Low-confidence Path | Hai vấn đề cùng xuất hiện trên một màn hình: (1) giao dịch bị phân loại sai khiến báo cáo cuối tháng sai lệch, (2) giao dịch chuyển khoản cá nhân bị bỏ trống danh mục khiến user không biết tiền đi đâu. |
+| Trang chủ MoMo chứa quá nhiều banner quảng cáo (Ví Trả Sau, Hoàn tiền 50%, Túi Thần Tài, sự kiện 6.6...) và các dịch vụ phụ, đẩy phần thông tin tài chính cá nhân xuống rất sâu. User phải cuộn nhiều lần mới thấy mục "Lịch sử GD". | [Trang chủ MoMo](./2db43d6e-5383-4b56-b18e-9fd9d3440f29.jpg) | Happy Path | Thông tin chi tiêu — thứ user cần nhất — bị chìm dưới quảng cáo. Cần một lối tắt hoặc Finance Card ngay đầu trang để user truy cập nhanh vào phân tích chi tiêu. |
+| Chatbot Moni trên MoMo trả lời đúng tổng chi tiêu tháng (271.667đ, 1 giao dịch), nhưng nội dung trả về chỉ là tóm tắt con số. Không giải thích khoản nào đáng chú ý, khoản nào bị phân loại sai, hoặc so sánh với tháng trước ra sao. | [Moni phân tích tháng](./00261735-c465-47a8-b007-0f29fc7d3ea3.jpg) | Happy Path | Moni có khả năng tổng hợp số liệu nhưng thiếu lớp giải thích (explainable insight). User vẫn phải tự suy luận tại sao chi tiêu tăng/giảm. Cần bổ sung phân tích nguyên nhân bằng ngôn ngữ tự nhiên. |
+| Khi hỏi Moni "tổng chi tiêu tháng này của mình là bao nhiêu" vào thời điểm đầu tháng (chưa phát sinh giao dịch), Moni trả lời "0đ — Bạn chưa phát sinh giao dịch nào". Câu trả lời đúng nhưng không gợi ý thêm hành động nào (xem tháng trước, đặt ngân sách...). | [Moni trả lời 0đ](./84dda259-a82b-4d67-807e-524c078be96f.jpg) | Happy Path | Khi không có dữ liệu, Moni dừng lại ở câu trả lời ngắn gọn mà không chủ động gợi ý bước tiếp theo. Trải nghiệm bị "chết" — user không biết làm gì tiếp. Cần bổ sung gợi ý hành động (suggested actions) cho cả trường hợp edge-case. |
 
 ---
 
@@ -46,17 +46,19 @@ Nhóm đã tiến hành phỏng vấn chéo nhanh 5 người dùng MoMo thuộc 
 ## 5. Từ Bằng Chứng Đến Thấu Hiểu (Evidence -> Insight)
 ```text
 Bằng chứng nổi bật nhất:
-User cảm thấy bực bội khi các giao dịch như chuyển khoản cá nhân bị bỏ trống ("Chưa phân loại")
-hoặc các giao dịch Google bị xếp sai nhóm mà không có cách chỉnh sửa nhanh chóng.
+Trên cùng một màn hình Lịch sử GD, giao dịch "Thanh toán Google" bị MoMo gán nhầm vào "Giải trí"
+(thực chất là công cụ làm việc), trong khi giao dịch "Chuyển tiền đến Nguyễn Đông Anh" bị bỏ trống
+hoàn toàn ("Chưa phân loại"). Ngoài ra, Moni chatbot chỉ trả lời con số tổng chi mà không giải thích
+khoản nào đáng chú ý hay bất thường.
 
 Insight:
-Người dùng không chỉ gặp vấn đề ở việc nhìn số liệu. Thật ra họ cần cảm giác kiểm soát (control)
-và sự chính xác trong báo cáo tài chính thông qua việc dễ dàng chỉnh sửa lại phân loại của AI
-khi AI dự đoán sai lệch.
+Người dùng không chỉ cần nhìn số liệu tổng quan. Họ cần hiểu lý do chi tiêu biến động và có cảm giác
+kiểm soát (control) thông qua việc dễ dàng chỉnh sửa lại phân loại của AI khi AI gán sai.
 
 Opportunity:
-AI có thể giúp bằng cách tự động gán nhãn nháp kèm mức độ tự tin (confidence level), sau đó
-chủ động đưa ra các nút hành động chỉnh sửa nhanh (1-click correction) trên chatbot.
+AI có thể giúp bằng cách tự động gán nhãn nháp kèm mức độ tự tin (confidence level), giải thích nguyên
+nhân biến động chi tiêu bằng ngôn ngữ tự nhiên, và đưa ra nút hành động chỉnh sửa nhanh (1-click correction)
+trên chatbot khi cần.
 ```
 
 ---
