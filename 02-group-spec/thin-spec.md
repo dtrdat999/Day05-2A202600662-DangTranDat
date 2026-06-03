@@ -14,8 +14,8 @@
 |---|---|---|---|
 | Lịch sử giao dịch MoMo chỉ hiển thị các con số và danh mục khô khan, không có giải thích xu hướng. | Nhóm tự dùng (Self-use) | User thấy tổng chi tăng so với cùng kỳ nhưng không rõ lý do (do ăn uống tăng hay do một khoản lớn đột xuất). | Thêm tính năng **AI Phân tích chi tiêu tháng** giải thích lý do tăng/giảm bằng ngôn ngữ tự nhiên. |
 | Giao dịch Google Play chỉ hiển thị tên chung chung "Thanh toán Google", dễ bị AI gán nhầm category. | Nhóm tự dùng (Self-use) | AI tự gán vào "Giải trí" có thể sai nếu đây là khoản mua Google Workspace/Drive phục vụ học tập/làm việc. | Thiết kế **Failure & Correction path**: Hiển thị độ tin cậy Medium, cho phép user đổi sang "Học tập / Công cụ". |
-| Các khoản chuyển khoản cho bạn bè (ví dụ "Nguyễn Đông Anh") bị bỏ trống danh mục ("Chưa phân loại"). | Nhóm tự dùng (Self-use) | Người dùng lười tự tay phân loại thủ công, dẫn đến báo cáo chi tiêu cuối tháng bị sai lệch nghiêm trọng. | Thiết kế **Low-confidence path**: AI không tự ý gán bừa mà hỏi lại user bằng các gợi ý (Ăn uống, Trả nợ, Cá nhân). |
-| Chatbot Moni trên MoMo thật trả lời "Không tìm thấy" khi được hỏi câu hỏi tự nhiên về chi tiêu ăn uống. | Nhóm tự dùng (Self-use) | Trải nghiệm chatbot tự do (free-text) dễ bị gãy do NLP chưa hiểu ngữ cảnh, khiến user mất lòng tin. | Sử dụng **Suggested Prompt Chips** được thiết kế sẵn tương ứng với các kịch bản demo chính để dẫn dắt hành động. |
+| Các khoản chuyển khoản cho bạn bè (ví dụ "Nguyễn Đông Anh") bị gán "Chưa phân loại" — việc không tự gán bừa cho giao dịch mập mờ là hợp lý, nhưng MoMo dừng ở đó và không gợi ý giúp user phân loại tiếp. | Nhóm tự dùng (Self-use) | User lười tự phân loại thủ công nên cứ để trống, dần dần mất kiểm soát dòng tiền cuối tháng. | Thiết kế **Low-confidence path**: AI chủ động hỏi lại user bằng các gợi ý nhanh (Ăn uống? Trả nợ? Cá nhân?) thay vì để trống im lặng. |
+| Chatbot Moni trên MoMo trả lời đúng tổng chi tiêu (271.667đ) nhưng chỉ nêu con số, không giải thích khoản nào đáng chú ý, khoản nào bị phân loại sai. Khi đầu tháng chưa có giao dịch, Moni trả lời "0đ" rồi dừng lại, không gợi ý hành động tiếp. | Nhóm tự dùng (Self-use) | Moni có khả năng tổng hợp số liệu nhưng thiếu lớp giải thích (explainable insight) và thiếu gợi ý hành động khi không có dữ liệu. | Bổ sung **phân tích nguyên nhân** bằng ngôn ngữ tự nhiên và **Suggested Prompt Chips** để dẫn dắt user đến bước tiếp theo. |
 | Trang chủ MoMo chứa quá nhiều quảng cáo và dịch vụ tài chính phụ, đẩy phần lịch sử chi tiêu xuống rất sâu. | Nhóm tự dùng (Self-use) | Người dùng cảm thấy phiền phức khi muốn xem nhanh tổng quan chi tiêu hiện tại. | Tạo một **Finance Center Card** tinh gọn ở trang chủ hiển thị tổng chi tiêu tháng 6 và nút bấm "Hỏi Moni" nổi bật. |
 
 ---
@@ -23,10 +23,11 @@
 ## 3. Phát Biểu Vấn Đề (Pain Statement)
 ```text
 User trẻ dùng MoMo đang gặp khó khi xem lại lịch sử giao dịch, vì các giao dịch hiển thị rời rạc,
-có khoản chưa phân loại hoặc phân loại chưa đúng (như giao dịch Google hoặc chuyển tiền cá nhân),
+có khoản chưa phân loại hoặc phân loại chưa đúng (như giao dịch Google bị gán "Giải trí" dù thực tế
+là công cụ làm việc, hoặc chuyển tiền cá nhân bị để trống danh mục mà không được gợi ý phân loại tiếp),
 dẫn tới việc user không hiểu vì sao tháng này chi tiêu tăng, khoản nào cần kiểm tra, và khoản nào
-nên được nhắc thanh toán. Bằng chứng chính là các giao dịch "Chưa phân loại" trong lịch sử GD MoMo
-và việc trợ lý Moni hiện tại trả lời "Không tìm thấy" khi hỏi bằng ngôn ngữ tự nhiên.
+nên được nhắc thanh toán. Bằng chứng chính: giao dịch "Chưa phân loại" trong lịch sử GD MoMo không được
+MoMo gợi ý phân loại, và chatbot Moni chỉ trả lời con số tổng chi mà không giải thích nguyên nhân biến động.
 ```
 
 ---
