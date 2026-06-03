@@ -1,7 +1,7 @@
 # Evidence Pack — Moni Tài Chính (Ví MoMo AI Spending Insight)
 
 ## 1. Nhóm và Track
-* **Tên nhóm:** Nhóm 4
+* **Tên nhóm:** Nhóm Moniii
 * **Track:** D — Personal Finance (Tài chính cá nhân)
 * **Product/app đã chọn:** Ví MoMo
 * **Build slice đang nghĩ:** AI Action Layer trên Lịch sử giao dịch MoMo giúp phân tích chi tiêu tháng, phân loại giao dịch mập mờ/chưa rõ mục đích, cảnh báo rủi ro và gợi ý nhắc lịch thanh toán hóa đơn.
